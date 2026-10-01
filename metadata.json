@@ -1,0 +1,6 @@
+{
+  "name": "FinPulse AI - Loan Eligibility & BFSI Suite",
+  "description": "AI-powered BFSI platform featuring Loan Eligibility Checker, Credit Score Analyzer, EMI Calculator, Google Sheets persistence, and Ayush AI Financial Advisor.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

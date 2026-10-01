@@ -1,0 +1,241 @@
+@import "tailwindcss";
+
+@layer utilities {
+  /* Subtle glassmorphism utilities */
+  .glass-card {
+    background: rgba(15, 23, 42, 0.65);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 9999px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.22);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+.animate-scaleUp {
+  animation: scaleUp 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* =========================================================================
+   CLEAN LIGHT THEME STYLES
+   Provides crisp contrast and readability in bright light environments
+   ========================================================================= */
+
+.theme-light {
+  background-color: #f6f8fc !important;
+  color: #0f172a !important;
+}
+
+.theme-light .bg-\[\#07090e\] {
+  background-color: #f6f8fc !important;
+}
+
+.theme-light header {
+  background-color: rgba(255, 255, 255, 0.88) !important;
+  border-bottom-color: rgba(226, 232, 240, 0.95) !important;
+}
+
+/* Glass card transformation in light mode */
+.theme-light .bg-slate-900\/60,
+.theme-light .bg-slate-900\/80,
+.theme-light .bg-slate-900\/90,
+.theme-light .bg-slate-900\/95,
+.theme-light .bg-slate-900 {
+  background-color: rgba(255, 255, 255, 0.88) !important;
+  border-color: rgba(226, 232, 240, 0.95) !important;
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
+}
+
+.theme-light .bg-slate-800\/30,
+.theme-light .bg-slate-800\/40,
+.theme-light .bg-slate-800\/50,
+.theme-light .bg-slate-800\/70,
+.theme-light .bg-slate-800\/80,
+.theme-light .bg-slate-800\/90,
+.theme-light .bg-slate-800 {
+  background-color: #f1f5f9 !important;
+  border-color: rgba(226, 232, 240, 0.9) !important;
+  color: #1e293b !important;
+}
+
+.theme-light .bg-slate-950\/40 {
+  background-color: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+}
+
+.theme-light .bg-\[\#090d16\]\/95 {
+  background-color: rgba(255, 255, 255, 0.96) !important;
+  border-color: #cbd5e1 !important;
+}
+
+.theme-light footer,
+.theme-light .bg-\[\#05070a\]\/60 {
+  background-color: rgba(241, 245, 249, 0.85) !important;
+  border-top-color: #e2e8f0 !important;
+}
+
+.theme-light footer p,
+.theme-light footer span {
+  color: #64748b !important;
+}
+
+.theme-light footer span.font-extrabold {
+  color: #0f172a !important;
+}
+
+/* Border adjustments */
+.theme-light .border-white\/5,
+.theme-light .border-white\/10,
+.theme-light .border-white\/20 {
+  border-color: #e2e8f0 !important;
+}
+
+/* Typography contrast */
+.theme-light .text-white {
+  color: #0f172a !important;
+}
+
+.theme-light .text-slate-100,
+.theme-light .text-slate-200 {
+  color: #1e293b !important;
+}
+
+.theme-light .text-slate-300 {
+  color: #334155 !important;
+}
+
+.theme-light .text-slate-400 {
+  color: #475569 !important;
+}
+
+.theme-light .text-slate-500 {
+  color: #64748b !important;
+}
+
+/* Inputs and interactive controls */
+.theme-light input[type="text"],
+.theme-light input[type="number"],
+.theme-light select {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+}
+
+.theme-light input::placeholder {
+  color: #94a3b8 !important;
+}
+
+/* Slider Track in light mode */
+.theme-light input[type="range"] {
+  background-color: #e2e8f0 !important;
+}
+
+/* Hero Cards in light mode */
+.theme-light .from-emerald-950\/40 {
+  background: linear-gradient(135deg, rgba(236, 253, 245, 0.95), rgba(240, 253, 250, 0.85), rgba(255, 255, 255, 0.95)) !important;
+  border-color: rgba(16, 185, 129, 0.3) !important;
+}
+
+.theme-light .from-cyan-950\/40 {
+  background: linear-gradient(135deg, rgba(236, 254, 255, 0.95), rgba(240, 253, 250, 0.85), rgba(255, 255, 255, 0.95)) !important;
+  border-color: rgba(6, 182, 212, 0.3) !important;
+}
+
+.theme-light .from-teal-950\/40 {
+  background: linear-gradient(135deg, rgba(240, 253, 250, 0.95), rgba(236, 253, 245, 0.85), rgba(255, 255, 255, 0.95)) !important;
+  border-color: rgba(20, 184, 166, 0.3) !important;
+}
+
+.theme-light .from-amber-950\/40 {
+  background: linear-gradient(135deg, rgba(255, 251, 235, 0.95), rgba(240, 253, 250, 0.85), rgba(255, 255, 255, 0.95)) !important;
+  border-color: rgba(245, 158, 11, 0.3) !important;
+}
+
+/* Nav container in light mode */
+.theme-light nav {
+  background-color: #f1f5f9 !important;
+  border-color: #e2e8f0 !important;
+}
+
+.theme-light nav button:not(.bg-gradient-to-r) {
+  color: #475569 !important;
+}
+
+.theme-light nav button:not(.bg-gradient-to-r):hover {
+  background-color: #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+/* Chat bubble styling in light mode */
+.theme-light .rounded-tl-sm.bg-slate-800\/80 {
+  background-color: #f1f5f9 !important;
+  color: #1e293b !important;
+  border-color: #e2e8f0 !important;
+}
+
+/* Credit meter gauge elements */
+.theme-light svg path[stroke="#1e293b"] {
+  stroke: #e2e8f0 !important;
+}
+.theme-light svg circle[fill="#0f172a"] {
+  fill: #f8fafc !important;
+  stroke: #0f172a !important;
+}
+.theme-light svg line[stroke="#ffffff"] {
+  stroke: #0f172a !important;
+}
+
+/* Custom scrollbars in light mode */
+.theme-light .scrollbar-thin::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+}
+.theme-light .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.25);
+}
